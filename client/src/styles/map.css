@@ -14,25 +14,20 @@
     height: 647px;
     background: #03260f;
     align-self: center;
-  
-  
-
   border-radius: 32px;
+  transform:
+    perspective(75em)
+    rotateX(18deg);
+  transition: transform 0.4s ease-in-out;
 
-  transition: transform 0.4s ease-in-out, filter 0.3s ease-in-out;
-  will-change: filter, transform;
-  transform: translateZ(0);
   }
 
   .country:hover {
     background: #2ecc71;
     transform:
-    translate3d(10px, 2px, 12px);
-    
-  
-     
-    
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    translate3d(2px, 2px, 20px)
+    scale(1.12);
+
 
 
     z-index: 6;

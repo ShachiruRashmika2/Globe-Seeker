@@ -374,13 +374,15 @@ const WorldMap = () => {
     <div className="map-container">
       <h1>World Map</h1>
     {countries.map((country) => (
+    
      
       <div
-        key={country.id}
+       key={country.id}
         className={`country ${country.id.toLowerCase()}`}
         style={{ clipPath: `path('${country.d}')` }}
         title={country.name}
       />
+      
     ))}
   </div>
   );
