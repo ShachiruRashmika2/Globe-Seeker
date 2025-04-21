@@ -2,34 +2,62 @@
     position: relative;
     width: 1000px;
     height: 647px;
-    background:transparent;
- 
+    background: rgb(0,71,171);
+    background: linear-gradient(159deg, rgba(0,71,171,1) 0%, rgba(28,169,201,1) 100%);
+    transform:perspective(75em)
+    rotateX(18deg);
+    box-shadow:
+    1px 1px 0 1px #f9f9fb,
+    -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
 
   }
-  
+
+
   .country {
-    position: absolute
-    ;
+    position: absolute;
     width:100%;
     height: 647px;
-    background: #03260f;
+ background: linear-gradient(147deg, #0e4827 0%,#0e4325 44%, #000000 74%);
     align-self: center;
   border-radius: 32px;
-  transform:
-    perspective(75em)
-    rotateX(18deg);
+  clip-rule: evenodd;
+  transform: translateY(-50px) scale(0.9) perspective(75em) rotateX(18deg);
+
+  translate: 0 -50px 0;
   transition: transform 0.4s ease-in-out;
+  animation: moveGradient 10s ease infinite;
+  background-size: 200% 200%;
+
+  cursor: pointer;
+  will-change: transform;
 
   }
+  @keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
 
   .country:hover {
-    background: #2ecc71;
+    background: url("https://flagsapi.com/LK/flat/64.png");
+    background-size: contain;
+    background-color: aqua;
+   
     transform:
-    translate3d(2px, 2px, 20px)
-    scale(1.12);
+    translate3d(2px, 2px, 2px)
+    scale(1.01);
+    
 
 
 
-    z-index: 6;
+
+    z-index: 8;
   }
   
+  .hovered{
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+ 
+  }
