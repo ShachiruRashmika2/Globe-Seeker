@@ -1,9 +1,74 @@
 import React from "react";
 import "../styles/map.css"; 
-
-
 import { useState } from "react";
 
+
+//defining svg path converter
+
+const svgPathtoPolygon = (svgPath) => {
+const Path=svgPath;
+const points= [...Path.matchAll(/[ML]([\d\.\-]+),([\d\.\-]+)/g)]
+.map(match => {
+  const x = parseFloat(match[1]).toFixed(1);
+  const y = parseFloat(match[2]).toFixed(1);
+  return `${x}px ${y}px`;
+});
+
+return points.join(", ");
+
+
+
+
+}
+const point2 = `705.1px 347.4px,
+  703.2px 347.1px,
+  699.3px 349.7px,
+  698.2px 348.6px,
+  698.4px 345.7px,
+  696.4px 343.6px,
+  692.8px 346.7px,
+  691.9px 348.3px,
+  691.0px 347.6px,
+  689.0px 348.7px,
+  688.1px 348.3px,
+  686.0px 347.6px,
+  684.5px 347.6px,
+  683.7px 347.5px,
+  682.3px 346.5px,
+  681.9px 347.8px,
+  679.6px 348.4px,
+  679.0px 351.2px,
+  675.3px 352.8px,
+  674.7px 354.3px,
+  672.6px 354.8px,
+  669.8px 353.5px,
+  668.6px 357.7px,
+  667.9px 360.1px,
+  669.1px 360.6px,
+  667.9px 362.4px,
+  669.0px 367.1px,
+  671.1px 367.7px,
+  671.3px 369.8px,
+  668.8px 372.7px,
+  673.5px 374.3px,
+  680.4px 373.8px,
+  684.0px 372.5px,
+  684.1px 369.8px,
+  685.7px 367.9px,
+  692.3px 366.0px,
+  692.1px 364.0px,
+  693.3px 362.0px,
+  695.0px 361.2px,
+  694.0px 359.0px,
+  696.6px 359.1px,
+  697.2px 356.6px,
+  698.6px 355.2px,
+  697.6px 352.0px,
+  699.3px 350.5px,
+  706.8px 348.8px,
+  708.4px 348.4px,
+  708.0px 347.4px,
+  705.1px 347.4px`;
 //definig contries svg map
 const countries = [
   {
@@ -375,14 +440,19 @@ const countries = [
 const WorldMap = () => {
 const[hoverdKey,setHoverdKey]=useState();
 
+
 const flagSetting=()=>{
   document.documentElement.style.setProperty('--flag',`url(https://flagsapi.com/${hoverdKey}/flat/64.png)`);
 }
 
   return (
+    <div>
+       <h1>World Map {hoverdKey}</h1>
     <div className="map-container">
-      <h1>World Map {hoverdKey}</h1>
-      <img src={`https://flagsapi.com/${hoverdKey}/flat/64.png`}></img>
+      <div className="map-mesh"></div>
+
+     
+    
       {countries.map((country) => (
         <div
           key={country.id}
@@ -397,6 +467,10 @@ const flagSetting=()=>{
           onMouseLeave={() => setHoverdKey(null)}
         />
       ))}
+     
+    </div>
+    <img src={`https://flagsapi.com/${hoverdKey}/flat/64.png`}></img>
+  
     </div>
   );
 };

@@ -2,35 +2,50 @@
     position: relative;
     width: 1000px;
     height: 647px;
-    background: rgb(0,71,171);
+
     background: linear-gradient(159deg, rgba(0,71,171,1) 0%, rgba(28,169,201,1) 100%);
+    
     transform:perspective(75em)
     rotateX(18deg);
     box-shadow:
     1px 1px 0 1px #f9f9fb,
     -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+    z-index: 1;
+
+  }
+  .map-mesh{
+position: absolute;
+inset: 0;
+box-sizing: border-box;
+size: inherit;
+background:url("../assets/Images/map-mesh.png") no-repeat center;
+background-size: cover;
+opacity: 0.3;
+
+
 
   }
 
 
   .country {
+    margin-top: 100px;
     position: absolute;
-    width:100%;
-    height: 647px;
- background: linear-gradient(147deg, #0e4827 0%,#0e4325 44%, #000000 74%);
+    width:inherit;
+    height: inherit;
+     background: linear-gradient(147deg, #0e4827 0%,#0e4325 44%, #000000 74%);
     align-self: center;
-  border-radius: 32px;
   clip-rule: evenodd;
   transform: translateY(-50px) scale(0.9) perspective(75em) rotateX(18deg);
-
   translate: 0 -50px 0;
   transition: transform 0.4s ease-in-out;
   animation: moveGradient 10s ease infinite;
-  background-size: 200% 200%;
-
+  background-size: 100% 100%;
   cursor: pointer;
   will-change: transform;
+  z-index: 3;
+  
+  
 
   }
   @keyframes moveGradient {
@@ -41,9 +56,9 @@
 
 
   .country:hover {
-    background: url("https://flagsapi.com/LK/flat/64.png");
+   background: brown;
     background-size: contain;
-    background-color: aqua;
+
    
     transform:
     translate3d(2px, 2px, 2px)
