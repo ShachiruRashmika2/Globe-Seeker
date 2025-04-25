@@ -438,7 +438,7 @@ const countries = [
 ];
 
 const WorldMap = () => {
-const[hoverdKey,setHoverdKey]=useState();
+const[hoverdKey,setHoverdKey]=useState(null);
 
 
 const flagSetting=()=>{
