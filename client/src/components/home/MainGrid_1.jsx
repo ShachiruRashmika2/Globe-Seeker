@@ -1,10 +1,21 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import CloudGlobe from "./MyGlobe";
 import TravelExploreRoundedIcon from '@mui/icons-material/TravelExploreRounded';
+import AOS from 'aos';
+
+
 
 const MainGrid_1 = () => {
+
+    const handleScrollClick = () => {
+        window.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      };
+  
     return (
-      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }} data-aos="fade-up">
         <Grid item xs={12} sm={12} md={12} lg={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',position:'relative' }}>
          <Box sx={{position:'relative',zIndex:2,animation:'bounce 2s ease-in'}}><CloudGlobe /></Box> 
           <Box
@@ -26,6 +37,7 @@ const MainGrid_1 = () => {
 <Button
                 variant="contained"
                 className="glassy"
+                onClick={handleScrollClick}
                 endIcon={<TravelExploreRoundedIcon  />}
                 sx={{
                     fontSize: { xs: 24, sm: 24, md: 24, lg: 25 },
