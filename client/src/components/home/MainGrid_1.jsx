@@ -14,7 +14,7 @@ const MainGrid_1 = () => {
               alignItems: 'center',
               transform: 'perspective(36em) rotateX(45deg)',
               position: 'relative',
-              top: { xs: 0, sm: 0, md: 0, lg: -175 },
+              top: { xs: -100, sm: -130, md: -150, lg: -175 },
               flexDirection: 'column',
              
               
@@ -28,28 +28,22 @@ const MainGrid_1 = () => {
                 className="glassy"
                 endIcon={<TravelExploreRoundedIcon  />}
                 sx={{
-                    fontSize: { xs: 12, sm: 15, md: 20, lg: 25 },
+                    fontSize: { xs: 24, sm: 24, md: 24, lg: 25 },
                     px: { xs: 2, sm: 3, md: 4, lg: 5 },
                     py: { xs: 1, sm: 1.5, md: 2, lg: 2.5 },
                     borderRadius: '50px',
-                    width: { xs: 100, sm: 150, md: 200, lg: 300 },
+                    width: { xs: 200, sm: 200, md: 300, lg: 300 },
                     color: 'secondary.main',
                     
                     
                
-                    '&:hover': {
-                    backgroundColor: 'white',
-                   
-                  
-                   
-                    },
                 }}>Let's Seek</Button>
           </Box>
             
             <Typography
               sx={{
                 fontWeight: 'bold',
-                fontSize: { xs: 20, sm: 25, md: 30, lg: 200 },
+                fontSize: { xs: 100, sm: 120, md: 150, lg: 200 },
                 textAlign: 'center',
                 lineHeight: 0.8,
             color:'primary.main',    
