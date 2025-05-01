@@ -1,7 +1,9 @@
 
   body{
 
-    background: #ffffff;
-    background: radial-gradient(circle, rgba(0, 230, 118, 0.38) 0%, rgba(134, 247, 208, 0.4) 18%, rgba(237, 255, 244, 0.47) 54%, rgba(255, 247, 247, 1) 100%);
-    height: 100vh;
+    background-color:hsla(150,0%,100%,1);
+    background-image:
+    radial-gradient(at 100% 59%, hsla(150,100%,45%,0.52) 0px, transparent 50%),
+    radial-gradient(at 0% 62%, hsla(150,100%,45%,0.4) 0px, transparent 50%);
+    
   }

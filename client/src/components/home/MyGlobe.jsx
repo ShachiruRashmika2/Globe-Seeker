@@ -20,7 +20,7 @@ const CloudGlobe = () => {
     // Add clouds
     const CLOUDS_IMG_URL = '/clouds.png'; // Place this in your public folder
     const CLOUDS_ALT = 0.004;
-    const CLOUDS_ROTATION_SPEED = -0.006;
+    const CLOUDS_ROTATION_SPEED = -0.009;
 
     new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
       const clouds = new THREE.Mesh(
@@ -46,8 +46,8 @@ const CloudGlobe = () => {
       globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
       bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
         backgroundColor="rgba(0, 0, 0, 0)"
-        width={300}
-        height={300}
+        width={500}
+        height={500}
     />
   );
 };

@@ -1,11 +1,14 @@
+import { Box } from "@mui/material";
+
+import MainGrid_1 from "../components/home/MainGrid_1";
+
 
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome to the Home Page</h1>
-            <p>This is the main page of the application.</p>
-        </div>
+       <Box>
+              <MainGrid_1/>
+       </Box>
     );
 };
 
