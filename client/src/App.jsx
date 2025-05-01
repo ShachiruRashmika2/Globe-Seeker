@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import WorldMap from './components/worldMap';
-import Navbar from './components/Navbar';
+import Layout from './Layout/Layout';
 import { createTheme,ThemeProvider } from '@mui/material';
 import { amber, teal } from '@mui/material/colors';
 const theme=createTheme({
@@ -30,7 +29,8 @@ const theme=createTheme({
  
 });
 
-
+//importing Pages
+import Home from './pages/Home';
 
 
 function App() {
@@ -40,7 +40,12 @@ function App() {
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <Routes>
-     <Route path='/' element={<Navbar/>}/>
+     <Route path='/' element={<Layout/>}>
+     
+          <Route index element={<Home/>} />
+     
+     
+     </Route>
     </Routes>
     </BrowserRouter>
     </ThemeProvider>
