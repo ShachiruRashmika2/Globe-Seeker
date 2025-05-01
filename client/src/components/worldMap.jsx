@@ -437,6 +437,9 @@ const countries = [
 
 ];
 
+import CloudGlobe from "./MyGlobe";
+
+
 const WorldMap = () => {
 const[hoverdKey,setHoverdKey]=useState(null);
 
@@ -446,9 +449,10 @@ const flagSetting=()=>{
 }
 
   return (
-    <div>
-       <h1>World Map {hoverdKey}</h1>
+    <div style={{display:"flex",flexDirection:"row",alignItems:"left",justifyContent:"space-between",margin:0}}>
+     
     <div className="map-container">
+    
       <div className="map-mesh"></div>
 
      
@@ -469,8 +473,9 @@ const flagSetting=()=>{
       ))}
      
     </div>
-    <img src={`https://flagsapi.com/${hoverdKey}/flat/64.png`}></img>
-  
+
+    <div style={{display:'flex',flexDirection:'column',width:'200px'}}><img src={`https://flagsapi.com/${hoverdKey}/flat/64.png`}></img>
+    <h1>World Map {hoverdKey}</h1></div>
     </div>
   );
 };
