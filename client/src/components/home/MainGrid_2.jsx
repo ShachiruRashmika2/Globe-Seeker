@@ -88,7 +88,21 @@ const MainGrid_2 = () => {
         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , width:'100%',height:'100%',overflow:'visible',position  :'relative'}}
         
         >
-
+  <Box
+  component="img"
+  src={Land}
+  alt="Land"
+  sx={{
+    position: 'absolute',
+    bottom: {xs:56,sm:-20,md:-40,lg:-80},
+    width: 'auto',
+    height: {lg:'190%',md:'150%',sm:'150%',xs:'100%'},
+    objectFit: 'contain',
+    zIndex: 3,
+    filter: "drop-shadow(31px 23px 7px rgba(0, 0, 0, 0.3))",
+  
+  }}
+/>
 
         
       
