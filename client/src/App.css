@@ -76,3 +76,23 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 1
   95% { transform: scale(1) translateY(-10px); }
   100% { transform: scale(1) translateY(0px); }
 }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes falling {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(45deg);
+  }
+  75% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX(45deg);
+  }
+}

@@ -1,7 +1,8 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import CloudGlobe from "./MyGlobe";
 import TravelExploreRoundedIcon from '@mui/icons-material/TravelExploreRounded';
-import AOS from 'aos';
+
+import LandScaps from "../../assets/Images/LandMarks2.png";
 
 
 
@@ -15,7 +16,10 @@ const MainGrid_1 = () => {
       };
   
     return (
-      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }} data-aos="fade-up">
+      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center',height:'600px' , backgroundImage: `url(${LandScaps})`,
+              backgroundSize: 'contain',         
+              backgroundPosition: 'center',   
+              backgroundRepeat: 'no-repeat',}} data-aos="fade-up">
         <Grid item xs={12} sm={12} md={12} lg={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',position:'relative' }}>
          <Box sx={{position:'relative',zIndex:2,animation:'bounce 2s ease-in'}}><CloudGlobe /></Box> 
           <Box
@@ -26,6 +30,7 @@ const MainGrid_1 = () => {
               transform: 'perspective(36em) rotateX(45deg)',
               position: 'relative',
               top: { xs: -100, sm: -130, md: -150, lg: -175 },
+           
               flexDirection: 'column',
              
               
@@ -58,7 +63,8 @@ const MainGrid_1 = () => {
                 fontSize: { xs: 100, sm: 120, md: 150, lg: 200 },
                 textAlign: 'center',
                 lineHeight: 0.8,
-            color:'primary.main',    
+            color:'primary.main',
+                
             
                 maskImage:
                   'linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(189, 184, 184, 0.06) 86%, rgba(189, 184, 184, 0.001) 92%, rgba(255, 247, 247, 0.0) 100%)',
