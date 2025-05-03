@@ -5,16 +5,18 @@ import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
 
 const MainGrid_4 = () => {
     return (
-     <Grid container spacing={2}  sx={{ my: '5%', mx: '2%', p:0, borderRadius: { xs: '5px', sm: '10px', md: '0px 80px'} ,width: '100%'  ,position:'relative',height:300,boxShadow:' rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px' }} > 
+     <Grid container spacing={2}  sx={{ my: '5%', mx: '2%', p:0, borderRadius: { xs: '5px', sm: '10px', md: '0px 80px'} ,width: '100%'  ,position:'relative',height:300,boxShadow:' rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px',
+      }}
+      data-aos="zoom-in"> 
     
      
  <Box sx={{position:'absolute',width:'100%',height:'100%',top:0,left:0,backgroundImage:`url(${flags})`,backgroundSize:'cover',backgroundPosition:'center',backgroundRepeat:'no-repeat',filter:'blur(5px)',zIndex:1,borderRadius: { xs: '5px', sm: '10px', md: '0px 80px'},
-    maskImage: "radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.71) 0%, rgba(174, 230, 203, 0) 100%)",
+    maskImage: "radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.71) 0%, rgba(174, 230, 203, 0) 100%)"
 
 }}/>
 
  
-      <Grid item size={6} sx={{ px: 5, py: 0, display: 'flex', gap: {xs:2,lg:10},justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row',zIndex:2}}>
+      <Grid item size={6} sx={{ px: 5, py: 0, display: 'flex', gap: {lg:10},justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row',zIndex:2}}>
       <Typography
       sx={{
         fontSize: { xs: 14, sm: 20, md: 25,lg:35 },
