@@ -9,7 +9,7 @@ import LandScaps from "../../assets/Images/Landspapes.png";
 
 const MainGrid_2 = () => {
     return (
-        <Grid  container spacing={2}   sx={{ my: '5%',mx:'2%' ,px:'2%' ,borderRadius:{xs:'5px',sm:'10px',md:'20px'}}}  data-aos="zoom-in">
+        <Grid  container spacing={2}   sx={{ my: '5%',mx:'2%' ,px:'2%' ,borderRadius:{xs:'5px',sm:'10px',md:'20px',width:'100%'}}}  data-aos="zoom-in">
         <Grid size={12} sx={{ px: 5, py:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
 
          
@@ -22,6 +22,7 @@ const MainGrid_2 = () => {
       fontWeight: 600,
       lineHeight: 1.6,
       color: "text.secondary", 
+      textAlign: "center",
       maxWidth: "100%", 
       mx: "auto", 
     }}

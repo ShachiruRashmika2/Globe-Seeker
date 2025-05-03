@@ -17,7 +17,7 @@ const MainGrid_3 = () => {
            
             spacing={1}
             sx={{ my: "5%",mt:{lg:21}, mx: "2%", px: 0,  borderRadius: { xs: "5px", sm: "10px", md: "20px" ,position:'relative',overflow:'visible',
-             display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',   
+             display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column', width:'100%',  
 
     backdropFilter: 'blur(5.1px)',
     WebkitBackdropFilter: 'blur(5.1px)',
@@ -47,52 +47,76 @@ const MainGrid_3 = () => {
          
         }}
     />
-           
-            <Grid
-                
-                spacing={3}
-                sx={{ px: 5, py: 4, display: "flex",justifyContent:'space-around', alignItems: "center", flexDirection: "row",width:'100%' ,position:'relative',zIndex:2}}
-            >
-            <Box >  <Typography
-                    sx={{ fontSize: { xs: 14, sm: 20, md: 45 }, fontWeight: "400", color: "text.secondary", textAlign: "left", mt: 2,mb:0, lineHeight: 1.2 }}
-                >
-                    Seek Countries
-                   
-                </Typography></Box>
-                <Box >
-                <Button
-                variant="contained"
-                color="secondary"
-               
-                    sx={{ fontSize: { xs: 14, sm: 20, md: 45 }, fontWeight: "800", textAlign: "center", mt: 2,mb:0, lineHeight: 1.2 }}
-                >
-                     On Map
-                     <Box sx={{ml:1}}><TravelExploreRoundedIcon sx={{ fontSize: { xs: 14, sm: 20, md: 35 } }} /></Box>
-                   
-                </Button>
+          <Grid
+  container
+  spacing={10}
+  sx={{
+    px: 5,
+    py: 4,
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    flexDirection: "row",
+    width: "100%",
+    position: "relative",
+    zIndex: 2,
+  }}
+>
+  <Grid item>
+    <Typography
+      sx={{
+        fontSize: { xs: 14, sm: 20, md: 45 },
+        fontWeight: "400",
+        color: "text.secondary",
+        textAlign: "left",
+        mt: 2,
+        mb: 0,
+        lineHeight: 1.2,
+      }}
+    >
+      Seek Countries
+    </Typography>
+  </Grid>
 
-                </Box>
-              
-                
-            </Grid>
+  <Grid item>
+    <Button
+      variant="contained"
+      color="secondary"
+      sx={{
+        fontSize: { xs: 14, sm: 20, md: 45 },
+        fontWeight: "800",
+        textAlign: "center",
+        mt: 2,
+        mb: 0,
+        lineHeight: 1.2,
+      }}
+    >
+      On Map
+      <Box sx={{ ml: 1 }}>
+        <TravelExploreRoundedIcon sx={{ fontSize: { xs: 14, sm: 20, md: 35 } }} />
+      </Box>
+    </Button>
+  </Grid>
+</Grid>
+
             <Grid
                 size={12}
-                sx={{ px: 5, py: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" ,position:'relative',height:400}}
+                sx={{ px: 5, py: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" ,position:'relative',height:{xs:350,sm:400}}}
             >
 
 
                 
-              <Box>
+              <Box sx={{position:'relative',width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
                 <Box
                  component="img"
                  src={Plane}
                  alt="Land"
                  sx={{
                    position: 'absolute',
-                   bottom: {xs:"16%",sm:"-5%",md:0,lg:'-13%'},
-                   left: {xs:0,sm:0,md:"18%",lg:"28%"},
+                   bottom: {xs:"38%",sm:"-5%",md:0,lg:'-13%'},
+                   left: {xs:'-3%',sm:70,md:"21%",lg:'27%'},
                    width: 'auto',
-                   height: {lg:'180%',md:'150%',sm:'150%',xs:'120%'},
+                   height: {lg:'180%',md:'150%',sm:'150%',xs:'100%'},
                    objectFit: 'contain',
                    
                    filter: "drop-shadow(31px 23px 7px rgba(0, 0, 0, 0.3))",

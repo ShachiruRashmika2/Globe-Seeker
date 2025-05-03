@@ -76,7 +76,7 @@ const handleOpenUserMenu = (event) => {
               flexGrow: 0,
             }}
           >
-              <img alt='logo' src={GlobeSeekerLogo} style={{width:'200px'}}/>
+              <Box component={'img'} alt='logo' src={GlobeSeekerLogo} sx={{width:'200px'}}/>
           </Box>
 
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
@@ -148,7 +148,7 @@ const handleOpenUserMenu = (event) => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 0, display: {xs:'none',sm:'flex'}, justifyContent: 'flex-end' }}>
           <IconButton aria-label="Mode" size="large">
               <DarkModeIcon fontSize="inherit" />
             </IconButton>

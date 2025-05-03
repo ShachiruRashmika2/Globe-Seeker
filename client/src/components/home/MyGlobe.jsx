@@ -1,12 +1,19 @@
-"use client"; // Only needed in Next.js
 
+import { useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
+import { useParams } from 'react-router-dom';
 import * as THREE from 'three';
 
-const CloudGlobe = () => {
+const CloudGlobe = ({size}) => {
   const globeEl = useRef();
 
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+
+  const defaultSize = 500; 
+  const currentSize = isXs ? size.xs : defaultSize;
+   
   useEffect(() => {
     const globe = globeEl.current;
 
@@ -46,8 +53,8 @@ const CloudGlobe = () => {
       globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
       bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
         backgroundColor="rgba(0, 0, 0, 0)"
-        width={500}
-        height={500}
+        width={currentSize}
+        height={currentSize}
     />
   );
 };

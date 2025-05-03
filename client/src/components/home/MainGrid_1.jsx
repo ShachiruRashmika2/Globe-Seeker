@@ -16,12 +16,12 @@ const MainGrid_1 = () => {
       };
   
     return (
-      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center',height:'600px' , backgroundImage: `url(${LandScaps})`,
-              backgroundSize: 'contain',         
+      <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center',height:'600px', width:'100%', backgroundImage: `url(${LandScaps})`,
+              backgroundSize: {xs:'fill',sm:'contain',md:'contain',lg:'contain'},         
               backgroundPosition: 'center',   
               backgroundRepeat: 'no-repeat',}} data-aos="fade-up">
         <Grid item xs={12} sm={12} md={12} lg={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',position:'relative' }}>
-         <Box sx={{position:'relative',zIndex:2,animation:'bounce 2s ease-in'}}><CloudGlobe /></Box> 
+         <Box sx={{position:'relative',zIndex:2,animation:'bounce 2s ease-in'}}><CloudGlobe size={{ xs: 400 }} /></Box> 
           <Box
             sx={{
               display: 'flex',
