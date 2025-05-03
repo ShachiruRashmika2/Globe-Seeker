@@ -90,6 +90,7 @@ const handleOpenUserMenu = (event) => {
               <MenuIcon />
             </IconButton>
             <Menu
+           
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -103,10 +104,17 @@ const handleOpenUserMenu = (event) => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'block', md: 'none'} }}
+              PaperProps={{
+                sx: {
+                  background:' rgba(255, 196, 0, 0.248)',
+
+backdropFilter: 'blur(5.1px)',
+                },
+              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} >
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>
               ))}

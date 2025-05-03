@@ -17,7 +17,7 @@ const MainGrid_1 = () => {
   
     return (
       <Grid container spacing={2} sx={{ px: 2, my: 2, display: 'flex', justifyContent: 'center', alignItems: 'center',height:'600px', width:'100%', backgroundImage: `url(${LandScaps})`,
-              backgroundSize: {xs:'fill',sm:'contain',md:'contain',lg:'contain'},         
+              backgroundSize:'contain',         
               backgroundPosition: 'center',   
               backgroundRepeat: 'no-repeat',}} data-aos="fade-up">
         <Grid item xs={12} sm={12} md={12} lg={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',position:'relative' }}>

@@ -9,12 +9,37 @@ import FlightIcon from '@mui/icons-material/Flight';
 import TravelExploreRoundedIcon from '@mui/icons-material/TravelExploreRounded';
 import Map from "../../assets/Images/vecteezy_national-map-world_37135749.png";
 import Plane from "../../assets/Images/vecteezy_top-view-of-a-airplane-isolated-on-a-transparent-background_53133372.png";
+import { useEffect, useRef, useState } from "react";
 
 const MainGrid_3 = () => {
+
+
+
+    const planeRef = useRef();
+    const [inView, setInView] = useState(false);
+  
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+          console.log(entry); 
+          if (entry.isIntersecting) {
+            setInView(true); 
+          } else {
+            setInView(false); 
+          }
+        }, { threshold: 0.5 });
+      
+        if (planeRef.current) observer.observe(planeRef.current);
+      
+        return () => observer.disconnect();
+      }, []);
+
+
     return (
         <Grid
+        ref={planeRef}
             container
-           
+            
+       
             spacing={1}
             sx={{ my: "5%",mt:{lg:21}, mx: "2%", px: 0,  borderRadius: { xs: "5px", sm: "10px", md: "20px" ,position:'relative',overflow:'visible',
              display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column', width:'100%',  
@@ -40,7 +65,7 @@ const MainGrid_3 = () => {
             opacity: 0.3,
             zIndex: -1,
 
-   
+            animation: "moveSouth 2s ease-in-out infinite",
             maskImage: "radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.71) 0%, rgba(174, 230, 203, 0) 100%)",
         
            
@@ -89,6 +114,7 @@ const MainGrid_3 = () => {
         mt: 2,
         mb: 0,
         lineHeight: 1.2,
+       
       }}
     >
       On Map
@@ -108,6 +134,7 @@ const MainGrid_3 = () => {
                 
               <Box sx={{position:'relative',width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
                 <Box
+               
                  component="img"
                  src={Plane}
                  alt="Land"
@@ -118,10 +145,12 @@ const MainGrid_3 = () => {
                    width: 'auto',
                    height: {lg:'180%',md:'150%',sm:'150%',xs:'100%'},
                    objectFit: 'contain',
-                   
+                   opacity: inView ? 1 : 0,
+                   transition: "opacity 0.5s ease-in-out",
+                   willChange: "transform, opacity", 
                    filter: "drop-shadow(31px 23px 7px rgba(0, 0, 0, 0.3))",
-                   animation: 'shadowOpposite 2s ease-in-out infinite ,moveForward 2s ease-in-out infinite',
-                 
+                   animation: inView?'flyin 2s ease-in-out ,shadowOpposite 2s ease-in-out infinite ,moveForward 2s ease-in-out infinite':'none',
+                   animationDelay:inView? '0s, 1s,3s':'none',
                  }}
                />
                 </Box> 

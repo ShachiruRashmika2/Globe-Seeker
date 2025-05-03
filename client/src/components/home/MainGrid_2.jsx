@@ -37,7 +37,7 @@ const MainGrid_2 = () => {
                 variant="contained"
                 color="secondary"
                
-                    sx={{ fontSize: { xs: 14, sm: 20, md: 45 }, fontWeight: "800", textAlign: "center", mt: 2,mb:0, lineHeight: 1.2 }}
+                    sx={{ fontSize: { xs: 18, sm: 20, md: 45 }, fontWeight: "800", textAlign: "center", mt: 2,mb:0, lineHeight: 1.2 }}
                 >
                      Explore The LIst
                     

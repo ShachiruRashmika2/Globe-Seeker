@@ -36,7 +36,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0,-100px); 
+    transform: translate(0,-50px); 
   }
   100% {
     transform: translate(0, 0); 
@@ -70,6 +70,13 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 1
 
   85% { transform: scale(1) translateY(0px); }
   95% { transform: scale(1) translateY(-10px); }
+  100% { transform: scale(1) translateY(0px); }
+}
+
+@keyframes flyin {
+  0% { transform: scale(0.6) translateY(1000px); }
+
+
   100% { transform: scale(1) translateY(0px); }
 }
 
