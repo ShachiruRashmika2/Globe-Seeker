@@ -144,6 +144,7 @@ const MainGrid_3 = () => {
                    left: {xs:'-3%',sm:70,md:"21%",lg:'27%'},
                    width: 'auto',
                    height: {lg:'180%',md:'150%',sm:'150%',xs:'100%'},
+                  
                    objectFit: 'contain',
                    opacity: inView ? 1 : 0,
                    transition: "opacity 0.5s ease-in-out",
