@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Grid } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import AllCountriesTable from "./AllCountriesTable";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
+import GroupsIcon from "@mui/icons-material/Groups";
 const AllContriesMainGrid = () => {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        setCountries(response.data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      }
-    };
-
-    fetchCountries();
-  }, []);
-
   return (
     <Grid
       container
@@ -35,9 +21,11 @@ const AllContriesMainGrid = () => {
     >
       {/********************************Grid 1********************************************** */}
       <Grid
+        className="glassy2"
         size={{ xs: 12, md: 1 }}
+        order={{ xs: 1, md: 1 }}
         sx={{
-          px: 2,
+          px: 0.5,
           py: 0,
           display: "flex",
           justifyContent: "center",
@@ -46,12 +34,224 @@ const AllContriesMainGrid = () => {
           bgcolor: "red",
           gap: 2,
 
-          height: { xs: "66vh", sm: "70vh", md: "60vh", lg: "70vh" },
+          height: { xs: "10vh", sm: "10vh", md: "60vh", lg: "70vh" },
           borderRadius: 10,
         }}
-      ></Grid>
+      >
+        <Stack
+          direction={{ xs: "row", sm: "row", md: "column", lg: "column" }}
+          spacing={2}
+          sx={{
+            width: "90%",
+            height: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: { xs: 16, sm: 18, md: 22, lg: 24 },
+              fontWeight: 900,
+              color: "text.secondary",
+              textAlign: "center",
+            }}
+          >
+            Filter <br />
+            By
+          </Typography>
+
+          {/*********************1*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 10, sm: 10, md: 12, lg: 14 },
+                fontWeight: 900,
+                color: "text.secondary",
+                textAlign: "center",
+                userSelect: "none",
+              }}
+            >
+              Asia
+            </Typography>
+          </Box>
+          {/*********************2*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 10, sm: 10, md: 12, lg: 14 },
+                fontWeight: 900,
+                color: "text.secondary",
+                textAlign: "center",
+                userSelect: "none",
+              }}
+            >
+              Europe
+            </Typography>
+          </Box>
+          {/*********************3*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 10, sm: 10, md: 12, lg: 14 },
+                fontWeight: 900,
+                color: "text.secondary",
+                textAlign: "center",
+                userSelect: "none",
+              }}
+            >
+              Africa
+            </Typography>
+          </Box>
+          {/*********************4*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 10, sm: 10, md: 12, lg: 14 },
+                fontWeight: 900,
+                color: "text.secondary",
+                textAlign: "center",
+                userSelect: "none",
+              }}
+            >
+              America
+            </Typography>
+          </Box>
+          {/*********************5*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 10, sm: 10, md: 12, lg: 14 },
+                fontWeight: 900,
+                color: "text.secondary",
+                textAlign: "center",
+                userSelect: "none",
+              }}
+            >
+              Australia
+            </Typography>
+          </Box>
+        </Stack>
+      </Grid>
+
+      {/********************************Grid 2********************************************** */}
       <Grid
-        size={{ xs: 12, md: 11 }}
+        size={{ xs: 12, md: 10 }}
+        order={{ xs: 3, md: 2 }}
         sx={{
           display: "flex",
           p: 2,
@@ -60,10 +260,135 @@ const AllContriesMainGrid = () => {
 
           overflowY: "scroll",
 
-          height: { xs: "66vh", sm: "70vh", md: "60vh", lg: "70vh" },
+          height: { xs: "50vh", sm: "50vh", md: "60vh", lg: "70vh" },
         }}
       >
         <AllCountriesTable />
+      </Grid>
+
+      <Grid
+        className="glassy2"
+        size={{ xs: 12, md: 1 }}
+        order={{ xs: 2, md: 3 }}
+        sx={{
+          px: 0.5,
+          py: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          bgcolor: "red",
+          gap: 2,
+
+          height: { xs: "10vh", sm: "10vh", md: "60vh", lg: "70vh" },
+          borderRadius: 10,
+        }}
+      >
+        <Stack
+          direction={{ xs: "row", sm: "row", md: "column", lg: "column" }}
+          spacing={2}
+          sx={{
+            width: "90%",
+            height: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: { xs: 16, sm: 18, md: 22, lg: 24 },
+              fontWeight: 900,
+              color: "text.secondary",
+              textAlign: "center",
+            }}
+          >
+            Sort
+            <br />
+            By
+          </Typography>
+
+          {/*********************1*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <SortByAlphaIcon sx={{ color: "text.secondary" }} />
+          </Box>
+          {/*********************2*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <GroupsIcon sx={{ color: "text.secondary" }} />
+          </Box>
+          {/*********************3*************************** */}
+
+          <Box
+            className="glassy3"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: 50, sm: 50, md: 55, lg: 60 },
+              height: { xs: 50, sm: 50, md: 55, lg: 60 },
+
+              p: 0.5,
+              cursor: "pointer",
+              "&:hover": { opacity: 0.8 },
+              "&:active": {
+                bgcolor: "primary.main",
+                boxShadow: "none",
+              },
+              "&:focus": { bgcolor: "primary.light" },
+
+              boxSizing: "border-box",
+              borderRadius: "50%",
+            }}
+          >
+            <FullscreenIcon sx={{ color: "text.secondary" }} />
+          </Box>
+        </Stack>
       </Grid>
     </Grid>
   );
