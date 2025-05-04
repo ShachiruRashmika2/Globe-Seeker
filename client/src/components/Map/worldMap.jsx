@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Map.css";
+import "../../styles/map.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
