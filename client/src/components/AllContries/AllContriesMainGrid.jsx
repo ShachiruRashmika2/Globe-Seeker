@@ -18,6 +18,7 @@ const AllContriesMainGrid = () => {
         justifyContent: "space-evenly",
         alignItems: "center",
       }}
+      data-aos="fade-up"
     >
       {/********************************Grid 1********************************************** */}
       <Grid

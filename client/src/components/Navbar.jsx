@@ -20,8 +20,8 @@ import GlobeSeekerLogo from "../assets/Images/GlobeseekerLogo1.png";
 import { Link as RouterLink } from "react-router-dom";
 const pages = [
   { name: "Home", path: "/" },
-  { name: "Countries", path: "/country" },
-  { name: "Flags", path: "/countries" },
+  { name: "Countries", path: "/countries" },
+  { name: "Flags", path: "#" },
   { name: "Map", path: "/sep/map" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

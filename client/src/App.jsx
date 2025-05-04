@@ -30,6 +30,7 @@ const theme = createTheme({
 import Home from "./pages/Home";
 import Country from "./pages/Country";
 import AllContries from "./pages/AllContries";
+import WorldMap from "./components/Map/worldMap";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               <Route path="/country" element={<Country />} />
               <Route path="/countries" element={<AllContries />} />
             </Route>
+            <Route path="/sep/map" element={<WorldMap />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

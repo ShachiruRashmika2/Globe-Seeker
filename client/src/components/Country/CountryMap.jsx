@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
@@ -6,7 +6,7 @@ const MapComponent = ({ osmLink }) => {
   const [position, setPosition] = useState([0, 0]);
   const [loading, setLoading] = useState(true);
 
-  const relationId = osmLink.split("/").pop();
+  const relationId = osmLink ? osmLink.split("/").pop() : 378734;
 
   useEffect(() => {
     const fetchCenterFromOverpass = async () => {
@@ -43,9 +43,10 @@ const MapComponent = ({ osmLink }) => {
     };
 
     fetchCenterFromOverpass();
-  }, [relationId]);
+    console.log("relationId", osmLink ? osmLink : relationId);
+  }, [osmLink, position]);
 
-  if (loading) return <p>Loading map...</p>;
+  if (loading) return <Typography>Loading map...</Typography>;
 
   return (
     <Box
@@ -63,10 +64,8 @@ const MapComponent = ({ osmLink }) => {
     >
       <MapContainer
         center={position}
-        zoom={7}
+        zoom={2}
         scrollWheelZoom={false}
-        dragging={false}
-        zoomControl={false}
         style={{ height: "80vh", width: "100%", borderRadius: "8px" }}
       >
         <TileLayer

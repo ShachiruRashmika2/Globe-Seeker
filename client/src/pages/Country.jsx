@@ -17,7 +17,6 @@ const Country = () => {
       }}
     >
       <CountryMainGrid />
-      <MapComponent osmLink="https://www.openstreetmap.org/relation/536807" />
     </Box>
   );
 };
