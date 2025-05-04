@@ -27,6 +27,7 @@ const theme = createTheme({
 //importing Pages
 import Home from "./pages/Home";
 import Country from "./pages/Country";
+import AllContries from "./pages/AllContries";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/country" element={<Country />} />
+            <Route path="/countries" element={<AllContries />} />
           </Route>
         </Routes>
       </BrowserRouter>
