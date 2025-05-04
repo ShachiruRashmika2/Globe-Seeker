@@ -8,6 +8,9 @@ import Paper from "@mui/material/Paper";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { setSelectedCountry } from "../../Features/Country/CountrySlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const mainCellStyle = {
   fontSize: 20,
@@ -22,6 +25,14 @@ const subCellStyle = {
 
 export default function AllCountriesTable() {
   const [countries, setCountries] = useState([]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSelectCountry = (country) => {
+    console.log(country);
+    dispatch(setSelectedCountry(country));
+    navigate("/country");
+  };
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -70,7 +81,12 @@ export default function AllCountriesTable() {
             <TableRow
               className="glassy3"
               key={country.cca2}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+                cursor: "pointer",
+                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
+                "&:focus": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
+              }}
             >
               <TableCell
                 component="th"
@@ -78,7 +94,7 @@ export default function AllCountriesTable() {
                 sx={subCellStyle}
                 align="center"
               >
-                {index}
+                {index + 1}
               </TableCell>
               <TableCell
                 align="center"
@@ -105,6 +121,7 @@ export default function AllCountriesTable() {
                     boxSizing: "border-box",
                     overflow: "hidden",
                   }}
+                  onClick={() => handleSelectCountry(country.cca2)}
                 >
                   <Box
                     component={"img"}

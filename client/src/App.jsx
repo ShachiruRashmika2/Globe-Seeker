@@ -2,6 +2,8 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "leaflet/dist/leaflet.css";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 import Layout from "./Layout/Layout";
 import { createTheme, ThemeProvider } from "@mui/material";
@@ -31,17 +33,19 @@ import AllContries from "./pages/AllContries";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/country" element={<Country />} />
-            <Route path="/countries" element={<AllContries />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/country" element={<Country />} />
+              <Route path="/countries" element={<AllContries />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

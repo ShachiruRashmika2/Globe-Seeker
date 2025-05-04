@@ -7,7 +7,32 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import PublicOffIcon from "@mui/icons-material/PublicOff";
 import CarLeft from "../../assets/Images/CarLeft.png";
 import CarRight from "../../assets/Images/CarRight.png";
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 const CountryMainGrid = () => {
+  const selectedCountry = useSelector((state) => state.country.selectedCountry);
+
+  const [country, setCountry] = useState({});
+
+  useEffect(() => {
+    const fetchCountry = async () => {
+      try {
+        const response = await axios.get(
+          `https://restcountries.com/v3.1/alpha/${selectedCountry}`
+        );
+        setCountry(response.data[0]);
+        console.log(country);
+        console.log(response.data[0]);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchCountry();
+  }, []);
+
   return (
     <Grid
       container
@@ -97,7 +122,7 @@ const CountryMainGrid = () => {
                 textAlign: "left",
               }}
             >
-              Democratic Socialist Republic of Sri Lanka
+              Sri lamnkda
             </Typography>
           </Box>
         </Box>
