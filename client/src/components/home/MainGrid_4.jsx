@@ -16,7 +16,7 @@ const MainGrid_4 = () => {
 }}/>
 
  
-      <Grid item size={6} sx={{ px: 5, py: 0, display: 'flex', gap: {lg:10},justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row',zIndex:2}}>
+      <Grid item size={6} sx={{ px: 5, py: 0, display: 'flex', gap: {xs:5,lg:10},justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row',zIndex:2}}>
       <Typography
       sx={{
         fontSize: { xs: 14, sm: 20, md: 25,lg:35 },

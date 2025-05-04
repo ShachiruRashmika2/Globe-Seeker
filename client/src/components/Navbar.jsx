@@ -17,8 +17,8 @@ import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Person2RoundedIcon from '@mui/icons-material/Person2Rounded';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import GlobeSeekerLogo from '../assets/Images/GlobeseekerLogo1.png';
-
-const pages = ['Countries', 'Flags', 'Map', 'About'];
+import { Link as RouterLink } from 'react-router-dom';
+const pages = [{name:'Home',path:'/'},{name:'Countries',path:'/country'}, {name:'Flags',path:'/flags'}, {name:'Map',path:'/sep/map'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -115,7 +115,21 @@ backdropFilter: 'blur(5.1px)',
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu} >
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+               <Typography
+  component={RouterLink}
+  to={page.path}
+  sx={{
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: 'inherit',
+    '&:hover': {
+      
+      color: 'inherit',
+    },
+  }}
+>
+  {page.name}
+</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -133,9 +147,11 @@ backdropFilter: 'blur(5.1px)',
           >
             {pages.map((page) => (
               <Button
+
                 variant="text"
+                component={RouterLink} to={page.path}
                 color="primary"
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{
                   mx: 1,
@@ -144,13 +160,14 @@ backdropFilter: 'blur(5.1px)',
                   fontWeight: '600',
                   color: 'text.primary',
                   textTransform: 'none',
+                  textAlign: 'center',
                   p: 2,
                   borderRadius: 24,
                   width: 150,
                   '&:hover': { backgroundColor: 'primary.main' },
                 }}
               >
-                {page}
+                {page.name}
               
               </Button>
             ))}
