@@ -56,7 +56,6 @@ const BottomBar = () => {
         item
         size={12}
         sx={{
-          px: 5,
           py: 0,
           display: "flex",
           justifyContent: "space-between",
