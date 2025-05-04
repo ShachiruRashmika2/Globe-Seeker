@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "leaflet/dist/leaflet.css";
+
 import Layout from "./Layout/Layout";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { amber, teal } from "@mui/material/colors";
