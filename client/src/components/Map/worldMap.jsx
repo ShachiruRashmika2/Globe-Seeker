@@ -7,18 +7,6 @@ import { Button, IconButton } from "@mui/material";
 
 //defining svg path converter
 
-const svgPathtoPolygon = (svgPath) => {
-  const Path = svgPath;
-  const points = [...Path.matchAll(/[ML]([\d\.\-]+),([\d\.\-]+)/g)].map(
-    (match) => {
-      const x = parseFloat(match[1]).toFixed(1);
-      const y = parseFloat(match[2]).toFixed(1);
-      return `${x}px ${y}px`;
-    }
-  );
-
-  return points.join(", ");
-};
 const point2 = `705.1px 347.4px,
   703.2px 347.1px,
   699.3px 349.7px,

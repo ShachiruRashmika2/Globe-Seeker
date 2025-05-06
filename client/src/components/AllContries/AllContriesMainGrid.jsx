@@ -3,7 +3,11 @@ import AllCountriesTable from "./AllCountriesTable";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import GroupsIcon from "@mui/icons-material/Groups";
+import { useState } from "react";
+
 const AllContriesMainGrid = () => {
+  const [selectedRegion, setselectedRegion] = useState("");
+  const [selectedSort, setselectedSort] = useState("");
   return (
     <Grid
       container
@@ -84,6 +88,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedRegion === "Asia" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedRegion("Asia");
             }}
           >
             <Typography
@@ -121,6 +130,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedRegion === "Europe" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedRegion("Europe");
             }}
           >
             <Typography
@@ -158,6 +172,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedRegion === "Africa" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedRegion("Africa");
             }}
           >
             <Typography
@@ -195,6 +214,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedRegion === "Americas" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedRegion("Americas");
             }}
           >
             <Typography
@@ -232,6 +256,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedRegion === "Oceania" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedRegion("Oceania");
             }}
           >
             <Typography
@@ -264,7 +293,7 @@ const AllContriesMainGrid = () => {
           height: { xs: "50vh", sm: "50vh", md: "60vh", lg: "70vh" },
         }}
       >
-        <AllCountriesTable />
+        <AllCountriesTable region={selectedRegion} sort={selectedSort} />
       </Grid>
 
       <Grid
@@ -331,6 +360,10 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor: selectedSort === "A-Z" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedSort("A-Z");
             }}
           >
             <SortByAlphaIcon sx={{ color: "text.secondary" }} />
@@ -358,6 +391,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedSort === "Population" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedSort("Population");
             }}
           >
             <GroupsIcon sx={{ color: "text.secondary" }} />
@@ -385,6 +423,11 @@ const AllContriesMainGrid = () => {
 
               boxSizing: "border-box",
               borderRadius: "50%",
+              bgcolor:
+                selectedSort === "Area" ? "primary.light" : "transparent",
+            }}
+            onClick={() => {
+              setselectedSort("Area");
             }}
           >
             <FullscreenIcon sx={{ color: "text.secondary" }} />
