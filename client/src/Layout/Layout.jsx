@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Box } from "@mui/material";
 import BottomBar from "../components/BottomBar";
-const Layout = () => {
+const Layout = ({ mode }) => {
   return (
     <Box
       sx={{
@@ -14,7 +14,7 @@ const Layout = () => {
         width: "100%",
       }}
     >
-      <Navbar />
+      <Navbar mode={mode} />
       <Outlet />
       <BottomBar />
     </Box>

@@ -26,7 +26,7 @@ const pages = [
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Navbar() {
+function Navbar({ mode }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -44,6 +44,8 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  console.log("mode", mode);
 
   return (
     <AppBar
@@ -195,12 +197,10 @@ function Navbar() {
               justifyContent: "flex-end",
             }}
           >
-            <IconButton aria-label="Mode" size="large">
+            <IconButton aria-label="Mode" size="large" onClick={mode}>
               <DarkModeIcon fontSize="inherit" />
             </IconButton>
-            <IconButton aria-label="search" size="large">
-              <SearchTwoToneIcon fontSize="inherit" />
-            </IconButton>
+
             <IconButton aria-label="profile" size="large">
               <Person2RoundedIcon fontSize="inherit" />
             </IconButton>
