@@ -14,7 +14,7 @@ const Layout = ({ mode }) => {
         width: "100%",
       }}
     >
-      <Navbar mode={mode} />
+      <Navbar />
       <Outlet />
       <BottomBar />
     </Box>

@@ -17,7 +17,10 @@ import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import Person2RoundedIcon from "@mui/icons-material/Person2Rounded";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import GlobeSeekerLogo from "../assets/Images/GlobeseekerLogo1.png";
+import GlobeSeekerLogoDark from "../assets/Images/GlobeseekerLogo1Dark.png";
 import { Link as RouterLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../Features/Country/DarkModeSlicer";
 const pages = [
   { name: "Home", path: "/" },
   { name: "Countries", path: "/countries" },
@@ -26,7 +29,10 @@ const pages = [
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Navbar({ mode }) {
+function Navbar() {
+  const cMode = useSelector((state) => state.darkMode.isDarkMode);
+  const dispatch = useDispatch();
+  const toggleMode = () => dispatch(toggleDarkMode());
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -45,7 +51,7 @@ function Navbar({ mode }) {
     setAnchorElUser(null);
   };
 
-  console.log("mode", mode);
+  console.log("mode", cMode);
 
   return (
     <AppBar
@@ -84,7 +90,7 @@ function Navbar({ mode }) {
             <Box
               component={"img"}
               alt="logo"
-              src={GlobeSeekerLogo}
+              src={!cMode ? GlobeSeekerLogo : GlobeSeekerLogoDark}
               sx={{ width: "200px" }}
             />
           </Box>
@@ -197,7 +203,7 @@ function Navbar({ mode }) {
               justifyContent: "flex-end",
             }}
           >
-            <IconButton aria-label="Mode" size="large" onClick={mode}>
+            <IconButton aria-label="Mode" size="large" onClick={toggleMode}>
               <DarkModeIcon fontSize="inherit" />
             </IconButton>
 

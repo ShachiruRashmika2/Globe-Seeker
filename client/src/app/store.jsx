@@ -1,8 +1,7 @@
-// src/app/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import countryReducer from "../Features/Country/CountrySlice";
+import darkModeReducer from "../Features/Country/DarkModeSlicer";
 
-// Load from localStorage
 const loadState = () => {
   try {
     const serializedState = localStorage.getItem("reduxState");
@@ -22,10 +21,15 @@ const saveState = (state) => {
 export const store = configureStore({
   reducer: {
     country: countryReducer,
+    darkMode: darkModeReducer,
   },
   preloadedState: loadState(),
 });
 
 store.subscribe(() => {
-  saveState(store.getState());
+  const state = store.getState();
+  saveState({
+    country: state.country,
+    darkMode: state.darkMode,
+  });
 });
